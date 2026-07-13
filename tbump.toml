@@ -1,0 +1,25 @@
+github_url = "https://github.com/Pierre-Sassoulas/django-no-multiline-template-comment"
+
+[version]
+current = "0.0.1"
+regex = '''
+^(?P<major>0|[1-9]\d*)
+\.
+(?P<minor>0|[1-9]\d*)
+\.
+(?P<patch>0|[1-9]\d*)
+(?:-(?P<prerelease>(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+(?P<buildmetadata>[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$
+'''
+
+[git]
+message_template = "Bump 'django-no-multiline-template-comment' to {new_version}"
+tag_template = "v{new_version}"
+
+[[file]]
+src = "README.md"
+
+[[file]]
+src = "pyproject.toml"
+
+[[file]]
+src = ".pre-commit-config.yaml"

@@ -1,0 +1,2 @@
+1: multi-line '{# #}' comment — use '{% comment %}…{% endcomment %}' (a wrapped '{# #}' renders as visible text)
+4: multi-line '{# #}' comment — use '{% comment %}…{% endcomment %}' (a wrapped '{# #}' renders as visible text)
