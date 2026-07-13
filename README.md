@@ -27,7 +27,7 @@ the mistake in CI.
 
 ```yaml
 - repo: https://github.com/Pierre-Sassoulas/django-no-multiline-template-comment/
-  rev: v0.0.1
+  rev: v0.0.2
   hooks:
     - id: django-no-multiline-template-comment
 ```
@@ -40,7 +40,7 @@ fixer hooks, a rewritten file fails the run so you review and re-stage it.
 
 ```yaml
 - repo: https://github.com/Pierre-Sassoulas/django-no-multiline-template-comment/
-  rev: v0.0.1
+  rev: v0.0.2
   hooks:
     - id: django-no-multiline-template-comment
       args: [--fix]

@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 authors = [{name = "Pierre Sassoulas", email = "pierre.sassoulas@gmail.com"}]
 name = "django-no-multiline-template-comment"
-version = "0.0.1"
+version = "0.0.2"
 description = "Reject multi-line Django '{# #}' template comments (a wrapped '{# #}' renders as visible text)."
 requires-python = ">=3.9"
 classifiers = [
