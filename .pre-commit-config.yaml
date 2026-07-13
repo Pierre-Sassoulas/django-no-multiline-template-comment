@@ -1,0 +1,55 @@
+ci:
+  skip: [pylint]
+
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: "v0.15.12"
+    hooks:
+      - id: ruff
+        exclude: tests/fixture
+        args: ["--fix", "--select", "F,E,W,I"]
+  - repo: local
+    hooks:
+      # Dogfood our own hook via the installed console script (no published
+      # tag needed, unlike the hosted `repo:` snippet shown in the README).
+      - id: django-no-multiline-template-comment
+        name: django-no-multiline-template-comment
+        entry: django-no-multiline-template-comment
+        language: system
+        types: [html]
+        exclude: tests/
+  - repo: https://github.com/psf/black-pre-commit-mirror
+    rev: 26.3.1
+    hooks:
+      - id: black
+        exclude: tests/fixture
+        args: [--safe, --quiet]
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v4.0.0-alpha.8
+    hooks:
+      - id: prettier
+        exclude: tests/fixture
+        args: [--prose-wrap=always, --print-width=88]
+  - repo: https://github.com/asottile/pyupgrade
+    rev: v3.21.2
+    hooks:
+      - id: pyupgrade
+        exclude: tests/fixture
+        args: [--py39-plus]
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v2.0.0
+    hooks:
+      - id: mypy
+        entry: mypy
+        language: python
+        types_or: [python, pyi]
+        exclude: tests/fixture
+  - repo: local
+    hooks:
+      - id: pylint
+        name: pylint
+        entry: pylint
+        language: system
+        exclude: tests
+        args: ["-sn", "-rn", "--disable=C0111,C0103"]
+        types: [python]

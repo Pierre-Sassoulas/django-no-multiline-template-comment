@@ -1,0 +1,5 @@
+- id: django-no-multiline-template-comment
+  name: django-no-multiline-template-comment
+  entry: django-no-multiline-template-comment
+  language: python
+  "types": [html]
