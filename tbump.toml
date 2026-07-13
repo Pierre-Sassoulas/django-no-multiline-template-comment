@@ -20,6 +20,3 @@ src = "README.md"
 
 [[file]]
 src = "pyproject.toml"
-
-[[file]]
-src = ".pre-commit-config.yaml"
