@@ -13,6 +13,8 @@ jobs:
   release-pypi:
     name: Upload release to PyPI
     runs-on: ubuntu-latest
+    # The PYPI_API_TOKEN secret lives in this GitHub Environment.
+    environment: PYPI_API_TOKEN
     steps:
       - name: Check out code from Github
         uses: actions/checkout@v4
